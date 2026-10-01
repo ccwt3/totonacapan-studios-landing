@@ -1,0 +1,918 @@
+/* ==========================================================================
+   Totonacapan Digital · estilos compartidos
+   Paleta tomada de los listones de la indumentaria veracruzana, el cielo de
+   los voladores de Papantla, la piedra de El Tajín y la flor de vainilla.
+   ========================================================================== */
+
+:root {
+  --manta: #f4ecdd;        /* algodón crudo */
+  --manta-2: #e9dcc4;      /* piedra clara */
+  --tinta: #1a1411;
+  --tinta-suave: #4a403a;
+  --anil: #1c3fd0;         /* cielo de los voladores */
+  --anil-profundo: #10238a;
+  --rosa: #e6347f;         /* listón rosa */
+  --turquesa: #2fb5dd;     /* listón turquesa */
+  --cempasuchil: #f5b316;
+  --rojo: #c62f2b;         /* bordado */
+  --vainilla: #2f6b3c;     /* hoja de vainilla */
+
+  --borde: 3px solid var(--tinta);
+  --radio: 22px;
+  --sombra: 0 6px 0 var(--tinta);
+  --sombra-alta: 0 10px 0 var(--tinta);
+
+  --f-display: "Anton", "Impact", sans-serif;
+  --f-texto: "Space Grotesk", system-ui, sans-serif;
+  --f-mono: "Space Mono", ui-monospace, monospace;
+
+  --margen: clamp(16px, 5vw, 64px);
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--f-texto);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--tinta);
+  background-color: var(--anil);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3, h4, p { margin: 0; }
+
+::selection { background: var(--rosa); color: var(--manta); }
+
+:focus-visible {
+  outline: 3px solid var(--rosa);
+  outline-offset: 3px;
+}
+
+.solo-lector {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Hoja: el contenedor redondeado sobre el fondo añil
+   -------------------------------------------------------------------------- */
+.hoja {
+  max-width: 1360px;
+  margin: clamp(8px, 2vw, 28px) auto;
+  background: var(--manta);
+  border: var(--borde);
+  border-radius: 34px;
+  overflow: clip;
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   Cabecera con pestaña recortada
+   -------------------------------------------------------------------------- */
+.cabecera {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: start;
+  gap: 16px;
+  padding: 0 var(--margen);
+  position: relative;
+  z-index: 20;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 22px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1;
+}
+.logo svg { width: 38px; height: 38px; flex: none; }
+.logo__nombre { font-size: 1.15rem; }
+.logo__nombre small {
+  display: block;
+  font-family: var(--f-mono);
+  font-size: .68rem;
+  font-weight: 400;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+  margin-top: 3px;
+}
+
+.pestana {
+  position: relative;
+  background: var(--tinta);
+  color: var(--manta);
+  border-radius: 0 0 24px 24px;
+  padding: 16px 30px 18px;
+}
+.pestana::before,
+.pestana::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 24px;
+  height: 24px;
+}
+.pestana::before {
+  left: -24px;
+  background: radial-gradient(circle at 0 100%, transparent 23px, var(--tinta) 24px);
+}
+.pestana::after {
+  right: -24px;
+  background: radial-gradient(circle at 100% 100%, transparent 23px, var(--tinta) 24px);
+}
+.pestana ul {
+  display: flex;
+  gap: clamp(14px, 2vw, 30px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.pestana a {
+  font-family: var(--f-mono);
+  font-size: .82rem;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color .2s, color .2s;
+}
+.pestana a:hover,
+.pestana a[aria-current="page"] {
+  color: var(--cempasuchil);
+  border-bottom-color: var(--cempasuchil);
+}
+
+.cabecera__accion {
+  justify-self: end;
+  padding-top: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.boton-menu {
+  display: none;
+  font: 700 .8rem var(--f-mono);
+  background: var(--tinta);
+  color: var(--manta);
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   Botones
+   -------------------------------------------------------------------------- */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font: 700 .86rem var(--f-mono);
+  text-decoration: none;
+  background: var(--tinta);
+  color: var(--manta);
+  border: var(--borde);
+  border-radius: 12px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .15s, background .2s;
+}
+.boton:hover { transform: translateY(-2px); box-shadow: 0 4px 0 var(--rosa); }
+.boton:active { transform: translateY(1px); box-shadow: none; }
+
+.boton--claro { background: var(--manta); color: var(--tinta); }
+.boton--claro:hover { box-shadow: 0 4px 0 var(--tinta); }
+
+.boton--pastilla {
+  background: transparent;
+  color: var(--tinta);
+  border-radius: 999px;
+  padding: 10px 20px;
+}
+.boton--pastilla:hover { background: var(--tinta); color: var(--manta); box-shadow: none; }
+
+.boton--amarillo { background: var(--cempasuchil); color: var(--tinta); }
+.boton--amarillo:hover { box-shadow: 0 4px 0 var(--tinta); }
+
+.flecha {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--cempasuchil);
+  color: var(--tinta);
+  flex: none;
+  transition: transform .2s;
+}
+.flecha svg { width: 14px; height: 14px; }
+a:hover > .flecha,
+button:hover > .flecha { transform: rotate(45deg); }
+
+/* --------------------------------------------------------------------------
+   Tipografía compartida
+   -------------------------------------------------------------------------- */
+.titulo-mega {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: clamp(3.1rem, 8.6vw, 8.4rem);
+  line-height: .92;
+  text-transform: uppercase;
+  letter-spacing: -.005em;
+}
+
+.titulo {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: clamp(2.3rem, 5.2vw, 4.4rem);
+  line-height: .98;
+  text-transform: uppercase;
+}
+
+.entrada {
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  max-width: 50ch;
+  color: var(--tinta-suave);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 400 .78rem var(--f-mono);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+.chip::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--rosa);
+}
+
+/* Resaltado estilo marcatextos, línea por línea */
+.resalte {
+  background: var(--cempasuchil);
+  padding: 0 .22em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+/* En títulos grandes el resaltado va en bloque para no tapar la línea de arriba */
+.titulo .resalte,
+.titulo-mega .resalte { display: inline-block; margin-top: .08em; }
+.resalte--rosa { background: var(--rosa); color: var(--manta); }
+.resalte--turquesa { background: var(--turquesa); }
+.resalte--manta { background: var(--manta); color: var(--tinta); }
+
+/* Subrayado de listones bajo una palabra */
+.liston {
+  position: relative;
+  isolation: isolate;
+  white-space: nowrap;
+}
+.liston::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: .13em;
+  height: .13em;
+  background: repeating-linear-gradient(90deg, var(--rosa) 0 18px, var(--turquesa) 18px 36px);
+  z-index: -1;
+}
+
+.contorno {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--tinta);
+}
+
+/* --------------------------------------------------------------------------
+   Secciones
+   -------------------------------------------------------------------------- */
+.seccion {
+  padding: clamp(64px, 9vw, 120px) var(--margen);
+  position: relative;
+}
+
+.encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 18px 40px;
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+.encabezado .titulo { flex: 0 1 auto; }
+.encabezado p { max-width: 46ch; color: var(--tinta-suave); }
+
+.oscuro {
+  background: var(--tinta);
+  color: var(--manta);
+}
+.oscuro .entrada,
+.oscuro .encabezado p { color: #cbbfae; }
+
+.fondo-nichos {
+  background-color: var(--manta-2);
+  background-image: url("../assets/svg/nichos.svg");
+  background-size: 60px 44px;
+}
+
+/* --------------------------------------------------------------------------
+   Ornamentos: greca, escalonado, listones, cinta de texto
+   -------------------------------------------------------------------------- */
+.greca {
+  height: 24px;
+  background: url("../assets/svg/greca.svg") repeat-x left center / 40px 24px;
+}
+.greca--clara { background-image: url("../assets/svg/greca-clara.svg"); }
+
+.escalonado {
+  height: 16px;
+  background: url("../assets/svg/escalonado.svg") repeat-x left bottom / 32px 16px;
+}
+
+.listones {
+  height: 30px;
+  background: repeating-linear-gradient(
+    180deg,
+    var(--rosa) 0 6px,
+    var(--turquesa) 6px 12px,
+    var(--manta) 12px 15px
+  );
+  border-block: var(--borde);
+}
+
+.cinta {
+  background: var(--tinta);
+  color: var(--manta);
+  overflow: hidden;
+  border-top: var(--borde);
+  padding: 14px 0;
+}
+.cinta__pista {
+  display: flex;
+  width: max-content;
+  animation: desliza 38s linear infinite;
+}
+.cinta__pista span {
+  font-family: var(--f-display);
+  font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  padding-right: 34px;
+  display: inline-flex;
+  align-items: center;
+  gap: 34px;
+  white-space: nowrap;
+}
+.cinta__pista span::after {
+  content: "";
+  width: 26px;
+  height: 26px;
+  background: url("../assets/svg/estrella.svg") center / contain no-repeat;
+}
+@keyframes desliza { to { transform: translateX(-50%); } }
+
+.adorno {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+.adorno--flor { width: clamp(56px, 7vw, 96px); }
+.adorno--estrella { width: clamp(28px, 3vw, 44px); }
+
+.gira-lento { animation: gira 18s linear infinite; }
+@keyframes gira { to { transform: rotate(360deg); } }
+
+.flota { animation: flota 6s ease-in-out infinite; }
+@keyframes flota {
+  50% { transform: translateY(-10px) rotate(var(--giro, 0deg)); }
+}
+
+/* --------------------------------------------------------------------------
+   Sello circular que gira (texto en círculo)
+   -------------------------------------------------------------------------- */
+.sello {
+  width: clamp(120px, 13vw, 170px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--tinta);
+  color: var(--manta);
+  display: grid;
+  place-items: center;
+  position: relative;
+  text-decoration: none;
+  border: var(--borde);
+  box-shadow: 0 0 0 6px var(--manta);
+}
+.sello svg.sello__texto {
+  position: absolute;
+  inset: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  animation: gira 16s linear infinite;
+}
+.sello__texto text {
+  font: 700 10.5px var(--f-mono);
+  letter-spacing: .16em;
+  fill: currentColor;
+  text-transform: uppercase;
+}
+.sello__centro {
+  width: 42%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--cempasuchil);
+  color: var(--tinta);
+  display: grid;
+  place-items: center;
+  font: 700 .7rem/1.1 var(--f-mono);
+  text-align: center;
+  text-transform: uppercase;
+  transition: transform .3s;
+}
+.sello:hover .sello__centro { transform: scale(1.08) rotate(-8deg); }
+
+/* --------------------------------------------------------------------------
+   Marco con muesca (foto recortada)
+   -------------------------------------------------------------------------- */
+.marco {
+  position: relative;
+  border: var(--borde);
+  border-radius: 30px;
+  overflow: hidden;
+  background: var(--tinta);
+}
+.marco > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.marco__muesca {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background: var(--manta);
+  border-left: var(--borde);
+  border-bottom: var(--borde);
+  border-bottom-left-radius: 24px;
+  padding: 10px 16px 12px 18px;
+  font: 400 .74rem var(--f-mono);
+  color: var(--tinta);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.marco__muesca--izq {
+  right: auto;
+  left: -3px;
+  border-left: 0;
+  border-right: var(--borde);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 24px;
+}
+.marco__pie {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font: 400 .66rem var(--f-mono);
+  color: var(--manta);
+  background: rgba(26, 20, 17, .6);
+  padding: 4px 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Tarjeta de cristal flotante */
+.cristal {
+  position: absolute;
+  z-index: 3;
+  background: rgba(255, 255, 255, .28);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255, 255, 255, .7);
+  border-radius: 22px;
+  padding: 14px 18px;
+  color: var(--tinta);
+  box-shadow: 0 18px 40px rgba(16, 35, 138, .25);
+  transform: rotate(var(--giro, 0deg));
+}
+.cristal strong {
+  display: block;
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.cristal span { font: 400 .74rem var(--f-mono); }
+
+/* Flechas garabato */
+.garabato {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+.garabato path {
+  fill: none;
+  stroke: var(--cempasuchil);
+  stroke-width: 9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.garabato--tinta path { stroke: var(--tinta); stroke-width: 5; }
+
+/* --------------------------------------------------------------------------
+   Tarjetas (borde grueso y sombra dura)
+   -------------------------------------------------------------------------- */
+.tarjeta {
+  position: relative;
+  border: var(--borde);
+  border-radius: var(--radio);
+  background: var(--manta);
+  box-shadow: var(--sombra);
+  padding: clamp(22px, 2.6vw, 32px);
+  transition: transform .2s, box-shadow .2s;
+}
+.tarjeta:hover { transform: translateY(-4px); box-shadow: var(--sombra-alta); }
+.tarjeta--oscura { background: var(--tinta); color: var(--manta); }
+.tarjeta--anil { background: var(--anil); color: var(--manta); }
+
+.tarjeta h3 {
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -.01em;
+  max-width: 16ch;
+}
+.tarjeta p { margin-top: 12px; color: var(--tinta-suave); }
+.tarjeta--oscura p { color: #cbbfae; }
+.tarjeta--anil p { color: #d9def7; }
+
+.tarjeta__icono {
+  width: 88px;
+  height: 88px;
+  margin-bottom: 18px;
+}
+.tarjeta__icono * {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.tarjeta__icono .relleno { fill: var(--cempasuchil); stroke: var(--tinta); }
+.tarjeta--oscura .tarjeta__icono .relleno { stroke: var(--tinta); }
+
+.tarjeta__enlace {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  font: 400 .8rem var(--f-mono);
+  text-decoration: none;
+}
+
+.lista-puntos {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: grid;
+  gap: 8px;
+}
+.lista-puntos li {
+  position: relative;
+  padding-left: 22px;
+  font-size: .96rem;
+}
+.lista-puntos li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .5em;
+  width: 10px;
+  height: 10px;
+  background: var(--rosa);
+  transform: rotate(45deg);
+}
+.tarjeta--oscura .lista-puntos li::before,
+.tarjeta--anil .lista-puntos li::before { background: var(--cempasuchil); }
+
+/* --------------------------------------------------------------------------
+   Rejillas
+   -------------------------------------------------------------------------- */
+.rejilla-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(18px, 2.4vw, 30px); }
+.rejilla-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(18px, 2.4vw, 30px); }
+
+/* --------------------------------------------------------------------------
+   Héroe
+   -------------------------------------------------------------------------- */
+.heroe {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: clamp(28px, 4vw, 60px);
+  align-items: center;
+  padding: clamp(40px, 6vw, 80px) var(--margen) clamp(56px, 7vw, 96px);
+  position: relative;
+}
+.heroe__texto { position: relative; z-index: 2; }
+.heroe__texto .chip { margin-bottom: 24px; }
+.heroe__texto .entrada { margin-top: 26px; }
+.heroe__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.heroe__visual {
+  position: relative;
+  min-height: 520px;
+}
+.heroe__visual .marco {
+  position: absolute;
+  inset: 0 0 0 12%;
+}
+.heroe__visual .sello {
+  position: absolute;
+  left: -2%;
+  bottom: 6%;
+  z-index: 4;
+}
+
+.datos-cortos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 34px;
+  margin-top: 42px;
+  padding-top: 24px;
+  border-top: 2px dashed var(--tinta);
+}
+.datos-cortos div { max-width: 17ch; }
+.datos-cortos strong {
+  display: block;
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.datos-cortos span { display: block; margin-top: 6px; font: 400 .78rem/1.4 var(--f-mono); color: var(--tinta-suave); }
+
+/* --------------------------------------------------------------------------
+   Pasos conectados por garabatos
+   -------------------------------------------------------------------------- */
+.pasos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(28px, 4vw, 56px);
+  counter-reset: paso;
+}
+.paso {
+  position: relative;
+  background: #fff8ec;
+  border-radius: 26px;
+  padding: 28px 24px;
+  text-align: center;
+  border: 2px solid var(--manta-2);
+}
+.paso::before {
+  counter-increment: paso;
+  content: "0" counter(paso);
+  display: inline-grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  background: var(--anil);
+  color: var(--manta);
+  font-family: var(--f-display);
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  transform: rotate(-6deg);
+}
+.paso:nth-child(2)::before { background: var(--rosa); transform: rotate(5deg); }
+.paso:nth-child(3)::before { background: var(--turquesa); color: var(--tinta); }
+.paso:nth-child(4)::before { background: var(--cempasuchil); color: var(--tinta); transform: rotate(7deg); }
+.paso h3 {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+.paso p { margin-top: 10px; font-size: .95rem; color: var(--tinta-suave); }
+.paso .garabato {
+  width: 64px;
+  right: -52px;
+  top: 38%;
+}
+.paso:last-child .garabato { display: none; }
+
+/* --------------------------------------------------------------------------
+   Llamado a la acción y formulario
+   -------------------------------------------------------------------------- */
+.llamado {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(28px, 4vw, 60px);
+  background: var(--manta-2);
+  border: var(--borde);
+  border-radius: 30px;
+  padding: clamp(28px, 4vw, 56px);
+  position: relative;
+  overflow: hidden;
+}
+.llamado .titulo { font-size: clamp(2.2rem, 4.4vw, 3.8rem); }
+.llamado .entrada { margin-top: 18px; }
+
+.formulario {
+  display: grid;
+  gap: 14px;
+  position: relative;
+  z-index: 2;
+}
+.formulario label {
+  display: grid;
+  gap: 6px;
+  font: 700 .74rem var(--f-mono);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.formulario input,
+.formulario select,
+.formulario textarea {
+  font: 400 1rem var(--f-texto);
+  color: var(--tinta);
+  background: var(--manta);
+  border: 2.5px solid var(--tinta);
+  border-radius: 12px;
+  padding: 12px 14px;
+  width: 100%;
+}
+.formulario textarea { min-height: 110px; resize: vertical; }
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--turquesa);
+}
+.formulario .doble { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.formulario .boton { justify-self: start; }
+.formulario__aviso {
+  font: 400 .78rem var(--f-mono);
+  color: var(--tinta-suave);
+  min-height: 1.2em;
+}
+
+/* --------------------------------------------------------------------------
+   Pie
+   -------------------------------------------------------------------------- */
+.pie {
+  background: var(--tinta);
+  color: var(--manta);
+  padding: 0 0 28px;
+}
+.pie .greca { margin-bottom: 44px; }
+.pie__rejilla {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 36px;
+  padding: 0 var(--margen);
+}
+.pie__marca {
+  font-family: var(--f-display);
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  line-height: .9;
+  text-transform: uppercase;
+}
+.pie__marca span { color: var(--cempasuchil); }
+.pie__marca small {
+  display: block;
+  margin-top: 12px;
+  font: 700 .82rem var(--f-mono);
+  letter-spacing: .12em;
+  color: var(--cempasuchil);
+}
+.pie h4 {
+  font: 700 .76rem var(--f-mono);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--cempasuchil);
+  margin-bottom: 14px;
+}
+.pie ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.pie a { text-decoration: none; color: #d8ccbb; }
+.pie a:hover { color: var(--manta); text-decoration: underline; }
+.pie__creditos {
+  margin: 44px var(--margen) 0;
+  padding-top: 20px;
+  border-top: 1px solid #3b322c;
+  font: 400 .72rem/1.6 var(--f-mono);
+  color: #9d9084;
+}
+.pie__creditos a { color: #bfb2a2; text-decoration: underline; }
+
+/* --------------------------------------------------------------------------
+   Aparición al hacer scroll
+   -------------------------------------------------------------------------- */
+.aparece {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1);
+  transition-delay: var(--retraso, 0s);
+}
+.aparece.visible { opacity: 1; transform: none; }
+
+/* --------------------------------------------------------------------------
+   Responsivo
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .pasos { grid-template-columns: repeat(2, 1fr); }
+  .paso:nth-child(2) .garabato { display: none; }
+  .rejilla-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .cabecera {
+    grid-template-columns: 1fr auto;
+    padding-top: 0;
+  }
+  .boton-menu { display: inline-block; }
+  .cabecera__accion .boton--pastilla { display: none; }
+  .pestana {
+    display: none;
+    position: absolute;
+    top: 84px;
+    left: 12px;
+    right: 12px;
+    border-radius: 22px;
+    padding: 20px;
+  }
+  .pestana::before,
+  .pestana::after { display: none; }
+  .cabecera.abierta .pestana { display: block; }
+  .pestana ul { flex-direction: column; gap: 6px; }
+  .pestana a { font-size: 1rem; display: block; padding: 10px 4px; }
+
+  .heroe { grid-template-columns: 1fr; }
+  .heroe__visual { min-height: 440px; }
+  .heroe__visual .marco { inset: 0 0 0 8%; }
+
+  .llamado { grid-template-columns: 1fr; }
+  .llamado .adorno,
+  .heroe > .adorno { display: none; }
+  .pie__rejilla { grid-template-columns: 1fr 1fr; }
+  .pie__rejilla > :first-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 640px) {
+  .rejilla-2,
+  .rejilla-3,
+  .pasos { grid-template-columns: 1fr; }
+  .paso .garabato { display: none; }
+  .formulario .doble { grid-template-columns: 1fr; }
+  .heroe__visual { min-height: 380px; }
+  .heroe__visual .sello { left: -4px; bottom: -24px; }
+  .seccion > .adorno { display: none; }
+  .cristal strong { font-size: 1.25rem; }
+  .hoja { border-radius: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  .aparece { opacity: 1; transform: none; }
+}

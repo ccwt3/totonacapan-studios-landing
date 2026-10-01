@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Volador · Plataforma para gimnasios</title>
+  <meta name="description" content="Volador, de Totonacapan Digital: socios, membresías, punto de venta y acceso con huella para gimnasios. Sigue operando aunque se caiga el internet.">
+  <meta name="theme-color" content="#1c3fd0">
+  <link rel="icon" href="assets/svg/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/producto.css">
+</head>
+<body>
+<div class="hoja">
+
+  <!-- ============================ Cabecera ============================ -->
+  <header class="cabecera cabecera--anil">
+    <a class="logo" href="index.html" aria-label="Volador, de Totonacapan Digital. Ir al inicio">
+      <img src="assets/svg/logo.svg" alt="" width="38" height="38">
+      <span class="logo__nombre">Volador <small>por Totonacapan Digital</small></span>
+    </a>
+
+    <nav class="pestana" id="menu" aria-label="Principal">
+      <ul>
+        <li><a href="#gimnasios">Gimnasios</a></li>
+        <li><a href="#modulos">Módulos</a></li>
+        <li><a href="#sin-internet">Sin internet</a></li>
+        <li><a href="#acceso">Acceso</a></li>
+        <li><a href="#huella">Huella</a></li>
+        <li><a href="#ruta">Ruta</a></li>
+        <li><a href="index.html">Empresa</a></li>
+      </ul>
+    </nav>
+
+    <div class="cabecera__accion">
+      <a class="boton boton--pastilla" href="#piloto">Únete al piloto</a>
+      <button class="boton-menu" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================ Héroe ============================ -->
+    <section class="heroe heroe--anil">
+      <div class="heroe__texto">
+        <span class="chip">Software para gimnasios · piloto en 2027</span>
+        <h1 class="titulo-mega">
+          Tu gimnasio<br>
+          no se <img class="heroe__mancuerna" src="assets/svg/mancuerna.svg" alt=""><br>
+          <span class="heroe__detiene">detiene</span>
+        </h1>
+        <p class="entrada">
+          <strong>Volador</strong> administra socios, membresías, caja y acceso con huella
+          en una sola plataforma. Cada sucursal trabaja con su propio servidor local, así que
+          sigue vendiendo y dejando entrar a tus socios aunque se caiga el internet.
+        </p>
+        <div class="heroe__acciones">
+          <a class="boton boton--amarillo" href="#piloto">Únete al piloto
+            <span class="flecha" style="background: var(--tinta); color: var(--cempasuchil)"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+          </a>
+          <a class="boton boton--pastilla boton--pastilla-clara" href="#sin-internet">Ver cómo funciona</a>
+        </div>
+
+        <div class="datos-cortos">
+          <div><strong>&lt; 1 s</strong><span>meta para reconocer una huella en la entrada</span></div>
+          <div><strong>0 ventas</strong><span>perdidas por cortes de internet: meta del piloto</span></div>
+          <div><strong>4 módulos</strong><span>socios, caja, acceso y dashboard</span></div>
+        </div>
+      </div>
+
+      <div class="heroe__visual">
+        <div class="marco">
+          <img class="heroe__foto" src="assets/img/gym-mancuernas.jpg" alt="Una mujer entrena con mancuernas frente al espejo de un gimnasio, junto a un estante de pesas." width="1920" height="1275">
+          <span class="marco__muesca">
+            <img src="assets/svg/estrella.svg" alt="" width="16" height="16">
+            Hecho para gimnasios
+          </span>
+        </div>
+
+        <div class="cristal flota aviso-acceso" style="--giro:-5deg; top: 10%; left: 0;">
+          <span class="aviso-acceso__estado">Acceso concedido</span>
+          <strong>Ana R.</strong>
+          <span>Plan mensual · huella · 07:02</span>
+        </div>
+
+        <div class="cristal flota" style="--giro:4deg; right: -3%; bottom: 22%; animation-delay: -3s;">
+          <span>Corte del turno matutino</span>
+          <strong>Diferencia $0.00</strong>
+        </div>
+
+        <img class="adorno heroe__pesa flota" src="assets/svg/pesa-rusa.svg" alt="" style="--giro: 8deg;">
+
+        <svg class="garabato" viewBox="0 0 120 120" style="width: 100px; left: 26%; top: 40%;" aria-hidden="true">
+          <path d="M14 14c-4 34 16 56 40 50 18-4 14-28-2-24-18 4-10 40 44 46"/>
+          <path d="M84 72l14 14-18 6"/>
+        </svg>
+
+        <a class="sello sello--disco" href="#piloto" aria-label="Únete a la lista del piloto">
+          <svg class="sello__texto" viewBox="0 0 100 100" aria-hidden="true">
+            <defs><path id="circulo-volador" d="M50 50m-40 0a40 40 0 1 1 80 0a40 40 0 1 1-80 0"/></defs>
+            <text><textPath href="#circulo-volador" textLength="248" lengthAdjust="spacing">Piloto 2027 · lista de espera ·</textPath></text>
+          </svg>
+          <span class="sello__centro">Súmate</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================ Cinta ============================ -->
+    <div class="cinta cinta--gym" aria-hidden="true">
+      <div class="cinta__pista">
+        <span>Socios</span><span>Membresías</span><span>Punto de venta</span><span>Acceso con huella</span><span>Asistencia</span><span>Dashboard</span><span>Sin internet</span>
+        <span>Socios</span><span>Membresías</span><span>Punto de venta</span><span>Acceso con huella</span><span>Asistencia</span><span>Dashboard</span><span>Sin internet</span>
+      </div>
+    </div>
+    <div class="listones" aria-hidden="true"></div>
+
+    <!-- ============================ Tipos de gimnasio ============================ -->
+    <section class="seccion" id="gimnasios">
+      <img class="adorno adorno--disco gira-lento" src="assets/svg/disco.svg" alt="" style="right: 5%; top: 6%;">
+      <div class="encabezado aparece">
+        <h2 class="titulo">Hecho para<br><span class="resalte">tu gimnasio</span></h2>
+        <p>Del gimnasio de barrio a la cadena con varias sucursales: socios, caja y entrada en un mismo sistema, pensado para el día a día de recepción.</p>
+      </div>
+
+      <div class="tipos">
+        <figure class="tipo aparece">
+          <div class="marco"><img src="assets/img/gym-sala-pesas.jpg" alt="Una mujer hace curl de bíceps frente a un estante de mancuernas." loading="lazy" width="1280" height="854"></div>
+          <figcaption><span class="tipo__num">01</span>Sala de pesas</figcaption>
+        </figure>
+        <figure class="tipo aparece" style="--retraso:.08s">
+          <div class="marco"><img src="assets/img/gym-box.jpg" alt="Clase de entrenamiento funcional: una atleta salta sobre un cajón mientras otros entrenan al fondo." loading="lazy" width="1280" height="850"></div>
+          <figcaption><span class="tipo__num">02</span>Box y funcional</figcaption>
+        </figure>
+        <figure class="tipo aparece" style="--retraso:.16s">
+          <div class="marco"><img src="assets/img/gimnasio.jpg" alt="Sala de pesas de un gimnasio con bancos, máquinas y piso amarillo." loading="lazy" width="960" height="636"></div>
+          <figcaption><span class="tipo__num">03</span>Gimnasio de barrio</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============================ Problema ============================ -->
+    <section class="seccion fondo-nichos" id="problema">
+      <div class="encabezado aparece">
+        <h2 class="titulo">Tres herramientas que<br><span class="resalte resalte--rosa">no se hablan</span></h2>
+        <p>Muchos gimnasios usan una hoja de cálculo para socios, una caja registradora y una libreta en la entrada. Cada una hace lo suyo y nadie ve el conjunto.</p>
+      </div>
+
+      <div class="problema">
+        <div class="marco problema__foto aparece">
+          <img src="assets/img/gym-peso-muerto.jpg" alt="Un hombre levanta una barra con discos en un ejercicio de peso muerto." loading="lazy" width="1280" height="854">
+          <span class="marco__muesca">¿Te suena?</span>
+        </div>
+
+        <div class="problema__lista">
+          <article class="dolor aparece">
+            <p class="dolor__antes"><s>Hoja de cálculo</s> → membresías vencidas que nadie detecta.</p>
+            <p class="dolor__despues"><span class="resalte">Con Volador</span> la huella confirma la vigencia en cada entrada y recepción ve el motivo si alguien no puede pasar.</p>
+          </article>
+          <article class="dolor aparece" style="--retraso:.08s">
+            <p class="dolor__antes"><s>Caja registradora</s> → diferencias en caja que nadie puede explicar.</p>
+            <p class="dolor__despues"><span class="resalte">Con Volador</span> cada turno cierra con corte ciego: quien cobra declara antes de ver el esperado.</p>
+          </article>
+          <article class="dolor aparece" style="--retraso:.16s">
+            <p class="dolor__antes"><s>Libreta en la entrada</s> → no sabes cuántos entran ni a qué hora.</p>
+            <p class="dolor__despues"><span class="resalte">Con Volador</span> ves asistencia, ingresos y retención por sucursal y en conjunto.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ Módulos ============================ -->
+    <section class="seccion" id="modulos">
+      <img class="adorno adorno--mancuerna flota" src="assets/svg/mancuerna.svg" alt="" style="right: 6%; top: 8%; --giro: -14deg;">
+      <div class="encabezado aparece">
+        <h2 class="titulo">Todo tu gimnasio,<br><span class="resalte">en un solo lugar</span></h2>
+        <p>Recepción y caja hablan con el mismo servidor de tu sucursal. El dueño lo ve todo desde la nube.</p>
+      </div>
+
+      <div class="rejilla-3">
+        <article class="tarjeta aparece">
+          <svg class="tarjeta__icono" viewBox="0 0 88 88" aria-hidden="true">
+            <rect x="8" y="18" width="72" height="52" rx="8"/>
+            <circle class="relleno" cx="30" cy="40" r="9"/>
+            <path d="M16 62c3-9 9-12 14-12s11 3 14 12M52 36h20M52 46h20M52 56h12"/>
+          </svg>
+          <h3><span class="resalte">Socios y membresías</span></h3>
+          <ul class="lista-puntos">
+            <li>Planes mensual, trimestral, anual, por visitas y pase de día</li>
+            <li>Congelamientos con tope por año</li>
+            <li>La vigencia se calcula a partir de los pagos: nadie extiende una membresía sin cobro</li>
+          </ul>
+        </article>
+
+        <article class="tarjeta tarjeta--oscura aparece" style="--retraso:.06s">
+          <svg class="tarjeta__icono" viewBox="0 0 88 88" aria-hidden="true">
+            <rect x="14" y="10" width="60" height="44" rx="6"/>
+            <rect class="relleno" x="22" y="18" width="44" height="14" rx="3"/>
+            <path d="M22 42h8M40 42h8M58 42h8M8 64h72l-6 14H14z"/>
+          </svg>
+          <h3><span class="resalte resalte--manta">Punto de venta</span></h3>
+          <ul class="lista-puntos">
+            <li>Membresías, productos y servicios en una venta</li>
+            <li>Turnos con fondo, retiros y corte ciego</li>
+            <li>Descuentos con tope por rol y motivo obligatorio</li>
+            <li>Cancelaciones con autorización y como movimiento inverso, nunca borrando</li>
+          </ul>
+        </article>
+
+        <article class="tarjeta tarjeta--anil aparece" style="--retraso:.12s">
+          <svg class="tarjeta__icono" viewBox="0 0 88 88" aria-hidden="true">
+            <path d="M18 40c2-14 12-26 26-26s24 12 26 26"/>
+            <path d="M24 64c-3-8-3-16-1-22 3-10 11-18 21-18s18 8 21 18"/>
+            <path d="M32 72c-3-9-3-18-1-26 2-6 7-10 13-10s11 4 13 10c1 4 1 8 1 12"/>
+            <path d="M44 46c0 12 1 24-2 34"/>
+            <circle class="relleno" cx="66" cy="68" r="13"/>
+            <path d="M60 68l4 4 8-8"/>
+          </svg>
+          <h3><span class="resalte">Acceso con huella</span></h3>
+          <ul class="lista-puntos">
+            <li>El socio entra con su huella: nada que se pierda o se preste</li>
+            <li>Recepción ve al instante el motivo si alguien no puede pasar</li>
+            <li>Acceso manual con motivo obligatorio y registro de quién lo autorizó</li>
+            <li>Asistencia de empleados con la misma huella</li>
+          </ul>
+        </article>
+
+        <article class="tarjeta tarjeta--oscura aparece">
+          <svg class="tarjeta__icono" viewBox="0 0 88 88" aria-hidden="true">
+            <path d="M14 30h60l-6 50H20z"/>
+            <path d="M30 30v-8a14 14 0 0 1 28 0v8"/>
+            <rect class="relleno" x="34" y="44" width="20" height="26" rx="4"/>
+            <path d="M38 44v-6h12v6"/>
+          </svg>
+          <h3><span class="resalte resalte--manta">Tienda e inventario</span></h3>
+          <ul class="lista-puntos">
+            <li>Suplementos, bebidas, ropa y accesorios</li>
+            <li>Entradas, salidas y ajustes con motivo</li>
+            <li>Alerta de stock mínimo</li>
+            <li>Traspasos entre sucursales</li>
+          </ul>
+        </article>
+
+        <article class="tarjeta aparece" style="--retraso:.06s">
+          <svg class="tarjeta__icono" viewBox="0 0 88 88" aria-hidden="true">
+            <rect x="8" y="12" width="72" height="60" rx="8"/>
+            <rect class="relleno" x="18" y="44" width="10" height="18"/>
+            <rect class="relleno" x="34" y="32" width="10" height="30"/>
+            <rect class="relleno" x="50" y="38" width="10" height="24"/>
+            <path d="M66 26v36M18 24h24"/>
+          </svg>
+          <h3><span class="resalte">Dashboard</span></h3>
+          <ul class="lista-puntos">
+            <li>Socios activos, ingreso recurrente y tasa de cancelación</li>
+            <li>Retención por cohorte y socios en riesgo</li>
+            <li>Mapa de calor de asistencia</li>
+            <li>Alertas: diferencia de caja, sucursal sin sincronizar</li>
+          </ul>
+        </article>
+
+        <article class="tarjeta tarjeta--rosa aparece" style="--retraso:.12s">
+          <svg class="tarjeta__icono" viewBox="0 0 88 88" aria-hidden="true">
+            <path d="M24 58a16 16 0 1 1 6-30 20 20 0 0 1 38 8 12 12 0 0 1-2 24H24z"/>
+            <rect class="relleno" x="14" y="68" width="16" height="12" rx="2"/>
+            <rect class="relleno" x="58" y="68" width="16" height="12" rx="2"/>
+            <path d="M22 68v-6M66 68v-6"/>
+          </svg>
+          <h3><span class="resalte resalte--manta">Varias sucursales</span></h3>
+          <ul class="lista-puntos">
+            <li>Cada sucursal con su propio servidor local</li>
+            <li>Sincronización con la nube en cuanto hay conexión</li>
+            <li>Un socio puede usar otras sucursales si su plan lo permite</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================ Sin internet ============================ -->
+    <section class="seccion oscuro" id="sin-internet">
+      <div class="encabezado aparece">
+        <h2 class="titulo">Se cae el internet.<br><span class="resalte" style="color: var(--tinta)">Tu gimnasio no.</span></h2>
+        <p>Recepción y caja hablan solo con el servidor de tu sucursal. La nube se pone al día cuando vuelve la conexión. Pruébalo:</p>
+      </div>
+
+      <div class="red aparece" data-red>
+        <div class="red__control">
+          <button class="interruptor" type="button" role="switch" aria-checked="true" data-interruptor>
+            <span class="interruptor__perilla"></span>
+            <span class="interruptor__texto" data-interruptor-texto>Internet conectado</span>
+          </button>
+          <p class="red__cola">Cambios en espera de subir: <strong data-cola>0</strong></p>
+        </div>
+
+        <div class="red__diagrama">
+          <div class="nodo">
+            <p class="nodo__titulo">Tu sucursal</p>
+            <ul>
+              <li>Recepción y caja</li>
+              <li>Lector de huella</li>
+              <li><strong>Servidor local</strong></li>
+            </ul>
+          </div>
+          <div class="enlace" aria-hidden="true">
+            <span class="enlace__linea"></span>
+            <span class="enlace__corte">✕</span>
+          </div>
+          <div class="nodo nodo--nube">
+            <p class="nodo__titulo">La nube</p>
+            <ul>
+              <li>Dashboard del dueño</li>
+              <li>Planes y precios</li>
+              <li>Otras sucursales</li>
+            </ul>
+          </div>
+        </div>
+
+        <ul class="operaciones" data-operaciones>
+          <li data-con="Normal" data-sin="Normal" data-estado-sin="ok">Vender en efectivo <span class="estado"></span></li>
+          <li data-con="Normal" data-sin="Normal" data-estado-sin="ok">Dejar entrar con huella <span class="estado"></span></li>
+          <li data-con="Normal" data-sin="Normal; sube al volver" data-estado-sin="ok">Corte de caja <span class="estado"></span></li>
+          <li data-con="Normal" data-sin="Depende de la terminal" data-estado-sin="parcial">Cobrar con tarjeta bancaria <span class="estado"></span></li>
+          <li data-con="Normal" data-sin="Normal; sube al volver" data-estado-sin="ok">Inscribir socios nuevos <span class="estado"></span></li>
+          <li data-con="Casi en tiempo real" data-sin="Se pone al día al volver" data-estado-sin="espera">Dashboard del dueño <span class="estado"></span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================ Simulador de acceso ============================ -->
+    <section class="seccion" id="acceso">
+      <div class="encabezado aparece">
+        <h2 class="titulo">Un segundo en<br><span class="resalte resalte--turquesa">la entrada</span></h2>
+        <p>El servidor de la sucursal revisa las reglas en orden y se detiene en la primera que falla. Recepción ve el motivo al instante. Elige a alguien y ponle el dedo al lector:</p>
+      </div>
+
+      <div class="simulador aparece" data-simulador>
+        <div class="simulador__socios" role="radiogroup" aria-label="Elige a un socio">
+          <button type="button" role="radio" aria-checked="false" data-caso="ok">
+            <strong>Ana R.</strong><span>Mensual vigente · 07:02</span>
+          </button>
+          <button type="button" role="radio" aria-checked="false" data-caso="vencida">
+            <strong>Luis M.</strong><span>Venció hace 3 días</span>
+          </button>
+          <button type="button" role="radio" aria-checked="false" data-caso="horario">
+            <strong>Carla T.</strong><span>Plan matutino · 21:40</span>
+          </button>
+          <button type="button" role="radio" aria-checked="false" data-caso="adeudo">
+            <strong>Pedro S.</strong><span>Inscripción sin pagar</span>
+          </button>
+          <button type="button" role="radio" aria-checked="false" data-caso="desconocida">
+            <strong>Visitante</strong><span>Huella no registrada</span>
+          </button>
+        </div>
+
+        <div class="lector">
+          <div class="lector__pantalla">
+            <p class="lector__cabeza">Recepción · Sucursal Centro</p>
+            <ol class="reglas" data-reglas>
+              <li>Huella reconocida</li>
+              <li>Membresía vigente</li>
+              <li>Horario y sucursal permitidos</li>
+              <li>Sin adeudo</li>
+            </ol>
+            <div class="veredicto" data-veredicto aria-live="polite">
+              <span>Esperando huella…</span>
+            </div>
+          </div>
+          <p class="nota">Simulación ilustrativa. Los nombres son ficticios.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ Huella ============================ -->
+    <section class="seccion fondo-nichos" id="huella">
+      <div class="huella">
+        <div class="huella__dibujo aparece" aria-hidden="true">
+          <svg viewBox="0 0 200 240">
+            <g fill="none" stroke-linecap="round" stroke-width="9">
+              <path stroke="#E6347F" d="M40 150c-6-60 20-110 62-110s66 46 62 100"/>
+              <path stroke="#2FB5DD" d="M62 180c-12-40-6-110 40-110 38 0 46 50 40 96"/>
+              <path stroke="#F5B316" d="M84 206c-10-30-14-110 18-110 26 0 26 44 20 84"/>
+              <path stroke="#1A1411" d="M102 124v96"/>
+              <path stroke="#E6347F" d="M142 196c6-16 10-30 10-44"/>
+              <path stroke="#2FB5DD" d="M30 110c8-40 34-74 74-78"/>
+              <path stroke="#C62F2B" d="M124 32c28 6 48 30 54 64"/>
+            </g>
+          </svg>
+          <img class="adorno adorno--flor gira-lento" src="assets/svg/flor.svg" alt="" style="right: 4%; top: 2%;">
+        </div>
+
+        <div class="huella__texto">
+          <span class="chip aparece">Privacidad</span>
+          <h2 class="titulo aparece">Tu huella,<br>con <span class="liston">respeto</span></h2>
+          <p class="entrada aparece">En Volador tu huella es tu llave para entrar. Por eso la tratamos con reglas que no se negocian.</p>
+
+          <div class="compromisos">
+            <article class="aparece">
+              <h3>Solo adultos y con consentimiento</h3>
+              <p>El sistema no abre el registro de huella sin un consentimiento expreso y vigente. Los menores no registran huella.</p>
+            </article>
+            <article class="aparece" style="--retraso:.06s">
+              <h3>Siempre hay plan B</h3>
+              <p>Si alguien no puede o no quiere registrar su huella, recepción le da acceso manual y queda registrado quién lo autorizó.</p>
+            </article>
+            <article class="aparece" style="--retraso:.12s">
+              <h3>Nunca guardamos la imagen</h3>
+              <p>Solo una plantilla cifrada, que no viaja en la sincronización, en las bitácoras ni en el respaldo general.</p>
+            </article>
+            <article class="aparece" style="--retraso:.18s">
+              <h3>Tu huella, tu decisión</h3>
+              <p>Puedes pedir en cualquier momento que se borre tu plantilla.</p>
+            </article>
+          </div>
+          <p class="nota aparece">El tratamiento de datos biométricos se revisa con asesoría legal antes del lanzamiento.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ Dashboard ============================ -->
+    <section class="seccion" id="dashboard">
+      <img class="adorno adorno--pesa flota" src="assets/svg/pesa-rusa.svg" alt="" style="right: 6%; top: 7%; --giro: -8deg;">
+      <div class="encabezado aparece">
+        <h2 class="titulo">Lo que ve <span class="resalte">el dueño</span></h2>
+        <p>Ingresos, asistencia y retención por sucursal y en conjunto, con alertas cuando algo no cuadra.</p>
+      </div>
+
+      <div class="panel aparece">
+        <div class="panel__barra">
+          <span></span><span></span><span></span>
+          <p>volador · resumen · todas las sucursales</p>
+          <em>Datos de ejemplo</em>
+        </div>
+        <div class="panel__kpis">
+          <div class="kpi"><span>Socios activos</span><strong>812</strong><em class="sube">+4.1 %</em></div>
+          <div class="kpi"><span>Ingreso recurrente mensual</span><strong>$389,400</strong><em class="sube">+2.6 %</em></div>
+          <div class="kpi"><span>Tasa de renovación</span><strong>71 %</strong><em class="baja">−1.8 %</em></div>
+          <div class="kpi kpi--alerta"><span>Socios en riesgo</span><strong>38</strong><em>sin asistir en 14 días</em></div>
+        </div>
+        <div class="panel__calor">
+          <p class="panel__subtitulo">Asistencia por hora y día</p>
+          <div class="calor" data-calor aria-label="Mapa de calor de asistencia de ejemplo: más entradas de 6 a 9 y de 18 a 21 horas entre semana." role="img"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ Ruta ============================ -->
+    <section class="seccion oscuro" id="ruta">
+      <div class="ruta__cabeza">
+        <div class="encabezado aparece">
+          <h2 class="titulo">Antes del vuelo,<br><span class="resalte" style="color: var(--tinta)">la subida</span></h2>
+          <p>Como los voladores de Papantla, primero subimos al palo con calma. Estas son las fechas estimadas; se confirman al cerrar la fase de descubrimiento.</p>
+        </div>
+        <div class="marco ruta__foto aparece">
+          <img src="assets/img/voladores-cima.jpg" alt="Voladores de Papantla con tocados de listones de colores, preparándose en lo alto del palo." loading="lazy" width="1280" height="853">
+        </div>
+      </div>
+
+      <ol class="ruta">
+        <li class="aparece"><time>Oct 2026</time><h3>Arranque</h3><p>Descubrimiento y pruebas del lector de huella.</p></li>
+        <li class="aparece"><time>Nov 2026</time><h3>Equipo elegido</h3><p>Lector de huella y servidor de sucursal definidos.</p></li>
+        <li class="aparece"><time>Abr 2027</time><h3>Demo del núcleo</h3><p>Socios, membresías, caja y acceso.</p></li>
+        <li class="aparece"><time>May 2027</time><h3>Huella y 72 h sin internet</h3><p>Huella en banco de pruebas y una sucursal operando tres días desconectada.</p></li>
+        <li class="aparece"><time>Sep 2027</time><h3>Piloto</h3><p>Un gimnasio real usando Volador todos los días.</p></li>
+        <li class="aparece ruta__meta"><time>Fin de 2027</time><h3>Versión 1</h3><p>Lanzamiento con dashboard y varias sucursales.</p></li>
+        <li class="aparece"><time>2028</time><h3>App de socios</h3><p>Renovaciones y avisos desde el celular.</p></li>
+      </ol>
+    </section>
+    <div class="escalonado" aria-hidden="true"></div>
+
+    <!-- ============================ Piloto ============================ -->
+    <section class="seccion" id="piloto">
+      <div class="llamado aparece">
+        <img class="adorno adorno--estrella gira-lento" src="assets/svg/estrella.svg" alt="" style="left: 38%; bottom: 10%; width: 56px;">
+
+        <div>
+          <span class="chip" style="margin-bottom: 18px;">Lista de espera</span>
+          <h2 class="titulo">¿Tienes un gimnasio? <span class="liston">Súbete</span> al piloto</h2>
+          <p class="entrada">Buscamos gimnasios de la región que quieran probar Volador antes que nadie y ayudarnos a darle forma.</p>
+          <ul class="lista-puntos">
+            <li>Te contamos qué equipo se necesita</li>
+            <li>Tu operación diaria define las prioridades</li>
+            <li>Sin compromiso: primero platicamos</li>
+          </ul>
+        </div>
+
+        <form class="formulario" data-formulario="piloto" novalidate>
+          <div class="doble">
+            <label>Tu nombre
+              <input name="nombre" autocomplete="name" required>
+            </label>
+            <label>Tu gimnasio
+              <input name="negocio" autocomplete="organization">
+            </label>
+          </div>
+          <div class="doble">
+            <label>Correo o teléfono
+              <input name="contacto" required>
+            </label>
+            <label>Sucursales
+              <input name="sucursales" type="number" min="1" value="1" inputmode="numeric">
+            </label>
+          </div>
+          <label>¿Cómo controlas hoy la entrada?
+            <select name="interes">
+              <option>Lista o libreta en recepción</option>
+              <option>Ya usamos huella</option>
+              <option>Otro sistema</option>
+              <option>No controlamos la entrada</option>
+            </select>
+          </label>
+          <label>Algo más que debamos saber
+            <textarea name="mensaje"></textarea>
+          </label>
+          <button class="boton" type="submit">Quiero ser piloto
+            <span class="flecha"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+          </button>
+          <p class="formulario__aviso" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ Pie ============================ -->
+  <footer class="pie">
+    <div class="greca greca--clara" aria-hidden="true"></div>
+    <div class="pie__rejilla">
+      <div>
+        <p class="pie__marca">Volador<small>por Totonacapan Digital</small></p>
+        <p style="margin-top: 14px; color: #cbbfae; max-width: 36ch;">Plataforma de administración para gimnasios. En desarrollo.</p>
+      </div>
+      <div>
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="#gimnasios">Gimnasios</a></li>
+          <li><a href="#modulos">Módulos</a></li>
+          <li><a href="#sin-internet">Sin internet</a></li>
+          <li><a href="#acceso">Acceso</a></li>
+          <li><a href="#huella">Huella</a></li>
+          <li><a href="#ruta">Ruta</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="index.html">Totonacapan Digital</a></li>
+          <li><a href="index.html#servicios">Servicios</a></li>
+          <li><a href="index.html#equipo">Equipo</a></li>
+          <li><a href="#piloto">Únete al piloto</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="pie__creditos">
+      © <span data-anio>2026</span> Totonacapan Digital.
+      Fotografías de Wikimedia Commons:
+      <a href="https://commons.wikimedia.org/wiki/File:Strength_training_(Unsplash).jpg">entrenamiento con mancuernas</a>, Scott Webb, CC0 ·
+      <a href="https://commons.wikimedia.org/wiki/File:Woman_standing_in_front_of_a_dumbbell_rack_doing_bicep_curls.jpg">sala de pesas</a>, Shixart1985, CC BY 2.0 ·
+      <a href="https://commons.wikimedia.org/wiki/File:District_Crossfit_Class_Warfare-47_(14973829717).jpg">box</a>, Rose Physical Therapy Group, CC BY 2.0 ·
+      <a href="https://commons.wikimedia.org/wiki/File:Gym_Iztacala.jpg">gimnasio</a>, Angeloide1, CC BY-SA 3.0 ·
+      <a href="https://commons.wikimedia.org/wiki/File:Fit_young_man_doing_deadlift_exercise_in_gym.jpg">peso muerto</a>, Nenad Stojkovic, CC BY 2.0 ·
+      <a href="https://commons.wikimedia.org/wiki/File:Voladores_de_Papantla_en_Aguascalientes_026.jpg">voladores en la cima</a>, Isra Rulowsinsky, CC0.
+    </p>
+  </footer>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+/* Estilos propios de la página de Totonacapan Digital (index.html) */
+
+.heroe__flor {
+  display: inline-block;
+  width: .72em;
+  height: .72em;
+  vertical-align: -.02em;
+  margin-left: .08em;
+}
+
+.heroe .adorno--estrella { width: 38px; }
+
+/* Tarjeta del producto dentro de Servicios */
+.tarjeta--producto {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  min-height: 360px;
+}
+.tarjeta--producto .chip { color: var(--manta); }
+.tarjeta--producto .chip::before { background: var(--cempasuchil); }
+.tarjeta--producto__nombre {
+  font-family: var(--f-display);
+  font-weight: 400 !important;
+  font-size: clamp(3.4rem, 7vw, 5.6rem) !important;
+  line-height: .9 !important;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.tarjeta--producto p { max-width: 34ch; margin: 0; position: relative; z-index: 2; }
+.tarjeta--producto .boton { margin-top: auto; position: relative; z-index: 2; }
+.tarjeta--producto__foto {
+  position: absolute;
+  right: -12%;
+  bottom: -32%;
+  width: 58%;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: 55% 30%;
+  border: var(--borde);
+  opacity: .9;
+  mix-blend-mode: luminosity;
+}
+
+/* Nosotros */
+.nosotros {
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+}
+.nosotros__foto { aspect-ratio: 4 / 5; box-shadow: 12px 12px 0 var(--rosa); }
+.nosotros__texto .chip { margin-bottom: 20px; }
+.nosotros__texto .entrada { margin-top: 20px; }
+
+.mision-vision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 32px;
+}
+.mision-vision .tarjeta p { font-size: .96rem; }
+
+.cita {
+  margin: clamp(56px, 8vw, 100px) auto 0;
+  max-width: 1040px;
+  text-align: center;
+}
+.cita blockquote { margin: 28px 0 18px; }
+.cita blockquote p {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 4.6vw, 3.9rem);
+  line-height: 1.04;
+  text-transform: uppercase;
+}
+.cita .resalte { display: inline-block; }
+.cita figcaption {
+  max-width: 62ch;
+  margin: 0 auto 28px;
+  color: var(--tinta-suave);
+}
+
+/* Valores: nichos */
+.valores {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+.valor {
+  position: relative;
+  background: #241c18;
+  border: 2px solid #3d332d;
+  border-radius: 18px 18px 6px 6px;
+  padding: 58px 20px 24px;
+  overflow: hidden;
+  transition: transform .25s, border-color .25s;
+}
+.valor::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 16px;
+  background: url("../assets/svg/escalonado.svg") repeat-x left bottom / 32px 16px;
+}
+.valor:hover { transform: translateY(-6px); border-color: var(--cempasuchil); }
+.valor__num {
+  position: absolute;
+  top: 28px;
+  right: 16px;
+  font: 700 .8rem var(--f-mono);
+  color: var(--cempasuchil);
+}
+.valor h3 {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: 1.7rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.valor p { margin-top: 12px; font-size: .95rem; color: #cbbfae; }
+
+/* Equipo */
+.equipo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.persona {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  background: var(--manta);
+  border: var(--borde);
+  border-radius: var(--radio);
+  padding: 20px;
+  box-shadow: var(--sombra);
+}
+.persona__avatar {
+  flex: none;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--c);
+  color: var(--t, var(--manta));
+  font-family: var(--f-display);
+  font-size: 1.6rem;
+  border: var(--borde);
+  box-shadow: 0 0 0 5px var(--manta), 0 0 0 7px var(--tinta);
+}
+.persona h3 { font-size: 1.05rem; line-height: 1.25; }
+.persona__rol {
+  font: 700 .72rem var(--f-mono);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--rosa);
+  margin: 4px 0 6px;
+}
+.persona p:last-child { font-size: .92rem; color: var(--tinta-suave); }
+
+@media (max-width: 1080px) {
+  .valores { grid-template-columns: repeat(3, 1fr); }
+  .equipo { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .nosotros { grid-template-columns: 1fr; }
+  .nosotros__foto { aspect-ratio: 16 / 11; }
+}
+
+@media (max-width: 640px) {
+  .valores,
+  .equipo,
+  .mision-vision { grid-template-columns: 1fr; }
+  .tarjeta--producto__foto { width: 60%; right: -20%; bottom: -14%; opacity: .5; }
+}
