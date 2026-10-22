@@ -12,7 +12,7 @@ Un gimnasio ficticio, **Gimnasio Halcón**, con tres sucursales: Poza Rica Centr
 | Punto de venta | Recepción (lector de huella simulado con foto en blanco, ficha, acciones, últimos accesos), Socios (búsqueda y alta), Ventas y Corte de caja | Figura 6, secciones 4.2 a 4.4 |
 | Soporte Totonacapan | Gimnasios atendidos, respaldos, versiones e incidencias | Figuras 8 y 10 |
 
-Una **guía** en la esquina acompaña al revisor pantalla por pantalla, resalta el elemento del que habla y se puede minimizar. Una franja fija avisa que es un proyecto escolar con datos ficticios.
+Una **guía** arriba a la derecha acompaña al revisor pantalla por pantalla, resalta el elemento del que habla y se puede minimizar. Se coloca justo debajo de la barra superior (mide su alto, que cambia con el ancho de la pantalla) para no tapar "Sucursal" ni "Modo de visión", y al bajar sube hasta la esquina. En pantallas de 900 px o menos va abajo, porque arriba taparía el menú. Una franja fija avisa que es un proyecto escolar con datos ficticios.
 
 ## Cómo está hecho
 

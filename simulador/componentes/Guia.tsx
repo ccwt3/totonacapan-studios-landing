@@ -72,6 +72,22 @@ export default function Guia() {
 
   useEffect(() => setPaso(0), [ruta]);
 
+  // La guía va arriba a la derecha, pero nunca encima del aviso ni de la barra superior,
+  // donde están "Sucursal" y "Modo de visión". Al bajar, sube hasta la esquina.
+  useEffect(() => {
+    const ajustar = () => {
+      const fondo = Math.max(...[...document.querySelectorAll(".listones, .barra")].map((el) => el.getBoundingClientRect().bottom));
+      document.documentElement.style.setProperty("--guia-top", `${Math.max(16, fondo + 16)}px`);
+    };
+    ajustar();
+    window.addEventListener("scroll", ajustar, { passive: true });
+    window.addEventListener("resize", ajustar);
+    return () => {
+      window.removeEventListener("scroll", ajustar);
+      window.removeEventListener("resize", ajustar);
+    };
+  }, [ruta]);
+
   useEffect(() => {
     try {
       setAbierta(localStorage.getItem(CLAVE_MINIMIZADA) !== "1");
