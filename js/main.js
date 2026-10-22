@@ -5,7 +5,7 @@
 const CORREO_CONTACTO = "contacto@totonacapan.digital";
 
 // Dirección de la simulación (app de Next.js en simulador/). Sustituir por la URL de Vercel.
-const URL_SIMULADOR = "https://volador-simulador.vercel.app";
+const URL_SIMULADOR = "https://volador-simulado.vercel.app/login";
 
 const reduceMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const espera = (ms) => new Promise((r) => setTimeout(r, reduceMovimiento ? 0 : ms));

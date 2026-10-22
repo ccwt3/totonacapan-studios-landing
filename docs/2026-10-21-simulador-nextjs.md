@@ -26,7 +26,7 @@ Una **guía** en la esquina acompaña al revisor pantalla por pantalla, resalta 
 
 ## Botón en la landing
 
-`volador.html` tiene en el héroe el botón **Probar el sistema (simulación)**. La dirección vive en una sola constante, `URL_SIMULADOR` en `js/main.js`. Hoy es un marcador (`https://volador-simulador.vercel.app`); hay que cambiarla por la URL real después de desplegar.
+`volador.html` tiene en el héroe el botón **Probar el sistema (simulación)**. La dirección vive en una sola constante, `URL_SIMULADOR` en `js/main.js`. Apunta al despliegue de Vercel: `https://volador-simulado.vercel.app/login`.
 
 ## Cómo correrlo y desplegarlo
 
